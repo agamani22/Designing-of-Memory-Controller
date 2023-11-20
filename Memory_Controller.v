@@ -1,3 +1,4 @@
+//MEMORY CONTROLLER DESIGN
 `timescale 1ns/10ps
 module memory (DataBus, MemWr, MemRd, Addr);
   inout [63:0] DataBus;
