@@ -8,7 +8,7 @@ module memory (DataBus, MemWr, MemRd, Addr);
   reg [63:0] Mem [0:63];//memory declaration
  
   initial begin
-    $readmemh ("input.txt", Mem);
+	  $readmemh ("input.txt", Mem); // here we took some data, & we r directing dumping those data in the memory
     $display($time,"ns data write process done ");
   end
   
@@ -18,7 +18,7 @@ module memory (DataBus, MemWr, MemRd, Addr);
 				datareg=64'hzzzzzzzzzzzzzzzz;
 	 	end
 	 	else if (MemRd==1'b1)	begin
-        		datareg= Mem[Addr];
+			datareg= Mem[Addr]; // while reading , wll store the data to data register , then from data register data transferred to data bus
   
           $display($time,"ns data read Address-%h is %h\n",
                    Addr,datareg);
@@ -28,5 +28,5 @@ module memory (DataBus, MemWr, MemRd, Addr);
 	 	else
 			datareg=64'hzzzzzzzzzzzzzzzz;
    end
-  assign DataBus = datareg;
+  assign DataBus = datareg; // data transferred to data bus 
   endmodule
