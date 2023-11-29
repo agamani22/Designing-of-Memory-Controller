@@ -9,7 +9,7 @@ module memory (DataBus, MemWr, MemRd, Addr);
  
   initial begin
 	  $readmemh ("input.txt", Mem); // here we took some data, & we r directing dumping those data in the memory, here 'readmemh' is the system task to diump the data directly to the memory
-    $display($time,"ns data write process done ");
+	  $display($time,"ns data write process done ");  //$readmemh reads hexadecimal data. Data has to exist in a text file.
   end
   
   always @ (MemWr or MemRd or Addr or datareg) begin
