@@ -8,7 +8,7 @@ module memory (DataBus, MemWr, MemRd, Addr);
   reg [63:0] Mem [0:63];//memory declaration
  
   initial begin
-	  $readmemh ("input.txt", Mem); // here we took some data, & we r directing dumping those data in the memory
+	  $readmemh ("input.txt", Mem); // here we took some data, & we r directing dumping those data in the memory, here 'readmemh' is the system task to diump the data directly to the memory
     $display($time,"ns data write process done ");
   end
   
