@@ -4,7 +4,7 @@ module memory (DataBus, MemWr, MemRd, Addr);
   inout [63:0] DataBus;
   input MemWr, MemRd;
   input [5:0] Addr;
-  reg [63:0] datareg;
+	reg [63:0] datareg;   // datareg is reg , for temporary storing the data from a particular memory location, From  datareg data will be fetched by the data bus
   reg [63:0] Mem [0:63];//memory declaration
  
   initial begin
@@ -28,5 +28,5 @@ module memory (DataBus, MemWr, MemRd, Addr);
 	 	else
 			datareg=64'hzzzzzzzzzzzzzzzz;
    end
-  assign DataBus = datareg; // data transferred to data bus 
+  assign DataBus = datareg; // data transferred to data bus , 'assign' will do the reading process of data from data bus
   endmodule
